@@ -1,0 +1,35 @@
+version: "3.9"
+services:
+  mysql:
+    image: mysql:latest
+    container_name: notas_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - "3306:3306"
+    volumes:
+      - notas_mysql_data:/var/lib/mysql
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile  # Ruta al Dockerfile del backend
+    restart: always
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile  # Ruta al Dockerfile del frontend
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "5173:5173"
+
+volumes:
+  notas_mysql_data:
