@@ -102,3 +102,23 @@ You need to have Docker installed.
 ## Usage
 
 1. Open [http://localhost:5173](http://localhost:5173) in your web browser
+
+## Views:
+Notes Actived
+![Alt text](img/image.png)
+
+Notes Archived
+![Alt text](img/image-1.png)
+
+Create Note
+![Alt text](img/image-2.png)
+
+Edit Note
+![Alt text](img/image-3.png)
+
+Note Archived!
+![Alt text](img/image-4.png)
+
+Note Removed!
+![Alt text](img/image-5.png)
+
